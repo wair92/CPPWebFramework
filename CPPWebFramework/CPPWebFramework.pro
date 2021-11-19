@@ -132,16 +132,13 @@ CONFIG(debug, debug|release) {
     TARGET = CPPWebFrameworkd
 } else {
     TARGET = CPPWebFramework
-    QMAKE_CXXFLAGS_RELEASE -= -O1
-    QMAKE_CXXFLAGS_RELEASE -= -O2
-    QMAKE_CXXFLAGS_RELEASE += -O3
 }
 
 INSTALLS += target
 INSTALLS += headers
 INSTALLS += config
 
-QMAKE_CXXFLAGS += -std=c++11
+CONFIG += c++17
 
 #Strongly recommended
 #LIBS += -ljemalloc

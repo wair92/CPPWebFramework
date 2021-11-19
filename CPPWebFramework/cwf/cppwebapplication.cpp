@@ -55,9 +55,8 @@ void writeLog(QtMsgType type, const QMessageLogContext &logContext, const QStrin
     }
 }
 
-CppWebApplication::CppWebApplication(int argc, char *argv[],
-                                     const QString &serverPath,
-                                     Filter *filter) : application(argc, argv), configuration(serverPath)
+CppWebApplication::CppWebApplication(const QString &serverPath,
+                                     Filter *filter): configuration(serverPath)
 {
     if(configuration.isValid())
     {               
@@ -116,7 +115,7 @@ int CppWebApplication::start()
     }
 
     qDebug() << "Server online\n";
-    return application.exec();
+    return 1;
 }
 
 CWF_END_NAMESPACE
